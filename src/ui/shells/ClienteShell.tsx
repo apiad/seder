@@ -12,7 +12,12 @@ export default function ClienteShell({ children }: { children: ReactNode }) {
         <span className="font-bold">SEDER · Cliente</span>
         <span className="text-sm opacity-80">{activeUser ? activeUser.name : 'Sin sesión'}</span>
       </header>
-      <main className="p-4 max-w-md mx-auto">{children}</main>
+      <main className="p-4 max-w-md mx-auto">
+        {children}
+        <footer className="mt-12 text-center text-xs text-slate-400">
+          <a href="/admin.html" className="underline">Abrir admin PWA →</a>
+        </footer>
+      </main>
     </div>
   );
 }

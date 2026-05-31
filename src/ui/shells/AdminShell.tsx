@@ -13,7 +13,12 @@ export default function AdminShell({ children }: { children: ReactNode }) {
           <span className="text-sm opacity-80">{op ?? 'Sin operador'}</span>
         </div>
       </header>
-      <main className="p-4 max-w-3xl mx-auto">{children}</main>
+      <main className="p-4 max-w-3xl mx-auto">
+        {children}
+        <footer className="mt-12 text-center text-xs text-slate-500">
+          <a href="/index.html" className="underline">Abrir cliente PWA →</a>
+        </footer>
+      </main>
     </div>
   );
 }
