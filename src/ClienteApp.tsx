@@ -5,6 +5,7 @@ import Home from './ui/cliente/Home';
 import AreaDetail from './ui/cliente/AreaDetail';
 import ReserveSlot from './ui/cliente/ReserveSlot';
 import MyReservations from './ui/cliente/MyReservations';
+import MyQR from './ui/cliente/MyQR';
 
 export default function ClienteApp() {
   return (
@@ -16,6 +17,7 @@ export default function ClienteApp() {
           <Route path="/area/:id" element={<AreaDetail />} />
           <Route path="/reserve/:areaId" element={<ReserveSlot />} />
           <Route path="/reservations" element={<MyReservations />} />
+          <Route path="/qr" element={<MyQR />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ClienteShell>
