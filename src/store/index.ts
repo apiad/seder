@@ -99,7 +99,10 @@ export const useStore = create<Store>()(
   ),
 );
 
+let applyingRemote = false;
+
 useStore.subscribe((state) => {
+  if (applyingRemote) return;
   publish(channel, {
     users: state.users,
     areas: state.areas,
@@ -111,5 +114,10 @@ useStore.subscribe((state) => {
 });
 
 subscribe(channel, (incoming) => {
-  useStore.setState(incoming, false);
+  applyingRemote = true;
+  try {
+    useStore.setState(incoming, false);
+  } finally {
+    applyingRemote = false;
+  }
 });
