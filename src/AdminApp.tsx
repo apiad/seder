@@ -3,6 +3,7 @@ import AdminShell from './ui/shells/AdminShell';
 import SelectOperator from './ui/admin/SelectOperator';
 import Dashboard from './ui/admin/Dashboard';
 import Scanner from './ui/admin/Scanner';
+import Areas from './ui/admin/Areas';
 
 export default function AdminApp() {
   return (
@@ -12,6 +13,7 @@ export default function AdminApp() {
           <Route path="/" element={<SelectOperator />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/scanner" element={<Scanner />} />
+          <Route path="/areas" element={<Areas />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AdminShell>
