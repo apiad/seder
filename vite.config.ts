@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'node:path';
 
 export default defineConfig({
-  base: './',
+  base: process.env.GITHUB_ACTIONS ? '/seder/' : '/',
   plugins: [react(), tailwindcss()],
   build: {
     rollupOptions: {
