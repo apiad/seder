@@ -1,6 +1,9 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { AppState, UserId, AreaId, ISODateTime, AccessLog, ScanResult } from '../domain/types';
+import { makeChannel, publish, subscribe } from './broadcast';
+
+const channel = makeChannel();
 import { buildSeed } from '../domain/seed';
 import {
   createReservation as createRes,
@@ -95,3 +98,18 @@ export const useStore = create<Store>()(
     },
   ),
 );
+
+useStore.subscribe((state) => {
+  publish(channel, {
+    users: state.users,
+    areas: state.areas,
+    reservations: state.reservations,
+    accessLogs: state.accessLogs,
+    activeUserId: state.activeUserId,
+    activeOperatorName: state.activeOperatorName,
+  });
+});
+
+subscribe(channel, (incoming) => {
+  useStore.setState(incoming, false);
+});
