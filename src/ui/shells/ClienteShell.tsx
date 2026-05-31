@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useStore } from '../../store';
 
 export default function ClienteShell({ children }: { children: ReactNode }) {
   const activeUserId = useStore(s => s.activeUserId);
   const users = useStore(s => s.users);
   const activeUser = users.find(u => u.id === activeUserId);
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-uh-cream text-slate-900">
@@ -21,7 +23,9 @@ export default function ClienteShell({ children }: { children: ReactNode }) {
         </div>
       </header>
       <main className="p-4 max-w-md mx-auto">
-        {children}
+        <div key={location.pathname} className="view-enter">
+          {children}
+        </div>
         <footer className="mt-12 text-center text-xs text-slate-500">
           <a href={`${import.meta.env.BASE_URL}admin.html`} className="underline hover:text-uh-granate">Abrir admin PWA →</a>
         </footer>

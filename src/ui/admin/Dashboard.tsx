@@ -22,11 +22,11 @@ export default function Dashboard() {
         <Stat label="Entradas hoy" value={admitsToday.length} />
         <Stat label="Logs totales" value={totalLogs} />
       </div>
-      <nav className="flex gap-3 text-sm font-display uppercase tracking-widest">
-        <Link to="/scanner" className="bg-uh-beige text-uh-granate-dark px-3 py-2 rounded hover:bg-uh-beige-dark transition-colors">Escáner</Link>
-        <Link to="/areas" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Áreas</Link>
-        <Link to="/reservations" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Reservas</Link>
-        <Link to="/users" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Usuarios</Link>
+      <nav className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm font-display uppercase tracking-widest">
+        <Link to="/scanner" className="bg-uh-beige text-uh-granate-dark px-4 py-4 min-h-14 rounded-xl text-center shadow-md hover:bg-uh-beige-dark hover:shadow-lg active:scale-[0.97] transition-all duration-150">Escáner</Link>
+        <Link to="/areas" className="bg-uh-granate px-4 py-4 min-h-14 rounded-xl text-uh-cream text-center shadow-md hover:bg-uh-granate-dark hover:shadow-lg active:scale-[0.97] transition-all duration-150">Áreas</Link>
+        <Link to="/reservations" className="bg-uh-granate px-4 py-4 min-h-14 rounded-xl text-uh-cream text-center shadow-md hover:bg-uh-granate-dark hover:shadow-lg active:scale-[0.97] transition-all duration-150">Reservas</Link>
+        <Link to="/users" className="bg-uh-granate px-4 py-4 min-h-14 rounded-xl text-uh-cream text-center shadow-md hover:bg-uh-granate-dark hover:shadow-lg active:scale-[0.97] transition-all duration-150">Usuarios</Link>
       </nav>
       <section>
         <h3 className="font-display uppercase tracking-widest text-xs text-uh-beige mb-2">Stream reciente</h3>
@@ -48,9 +48,9 @@ export default function Dashboard() {
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="bg-uh-granate-dark border border-uh-granate rounded p-3">
+    <div className="bg-uh-granate-dark border border-uh-granate rounded-xl px-4 py-4 shadow-md">
       <div className="text-xs uppercase tracking-widest text-uh-beige">{label}</div>
-      <div className="font-display text-3xl text-uh-cream">{value}</div>
+      <div className="font-display text-3xl text-uh-cream mt-1">{value}</div>
     </div>
   );
 }

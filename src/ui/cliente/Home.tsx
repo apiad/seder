@@ -26,7 +26,7 @@ export default function Home() {
         ) : (
           <ul className="space-y-2">
             {myReservations.map(r => (
-              <li key={r.id} className="bg-white border border-slate-200 rounded px-3 py-2 text-sm">
+              <li key={r.id} className="bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm shadow-sm">
                 {r.areaId} — {r.slotStart.slice(11, 16)}
               </li>
             ))}
@@ -37,12 +37,12 @@ export default function Home() {
 
       <section>
         <h3 className="font-display uppercase tracking-widest text-xs text-uh-granate mb-2">Áreas</h3>
-        <ul className="space-y-2">
+        <ul className="space-y-3">
           {areas.map(a => (
             <li key={a.id}>
-              <Link to={`/area/${a.id}`} className="block bg-white border border-slate-200 rounded px-3 py-2 hover:bg-uh-granate-soft hover:border-uh-granate transition-colors">
-                <div className="font-medium">{a.name}</div>
-                <div className="text-xs text-slate-500">
+              <Link to={`/area/${a.id}`} className="block bg-white border border-slate-200 rounded-xl px-5 py-4 min-h-16 shadow-sm hover:bg-uh-granate-soft hover:border-uh-granate hover:shadow-md active:scale-[0.98] transition-all duration-150">
+                <div className="font-medium text-lg">{a.name}</div>
+                <div className="text-xs text-slate-500 mt-0.5">
                   {a.archetype === 'slot-bookable' ? 'Reservar turno' : 'Acceso libre'} · {a.schedule.open}–{a.schedule.close}
                 </div>
               </Link>

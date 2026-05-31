@@ -18,13 +18,13 @@ export default function SelectOperator() {
   return (
     <div className="space-y-4">
       <h2 className="font-display text-2xl tracking-widest text-uh-beige uppercase">Operador</h2>
-      <ul className="space-y-2">
+      <ul className="space-y-3">
         {SUGGESTED.map(s => (
           <li key={s}>
             <button
               type="button"
               onClick={() => enter(s)}
-              className="w-full text-left bg-uh-granate-dark border border-uh-granate rounded px-4 py-3 hover:bg-uh-granate hover:border-uh-beige transition-colors"
+              className="w-full text-left bg-uh-granate-dark border border-uh-granate rounded-xl px-5 py-4 min-h-16 text-lg shadow-md hover:bg-uh-granate hover:border-uh-beige hover:shadow-lg active:scale-[0.98] transition-all duration-150"
             >
               {s}
             </button>
@@ -36,9 +36,9 @@ export default function SelectOperator() {
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="Otro nombre"
-          className="flex-1 bg-uh-granate-dark border border-uh-granate rounded px-3 py-2 placeholder:text-uh-beige/50"
+          className="flex-1 bg-uh-granate-dark border border-uh-granate rounded-xl px-4 py-3 min-h-14 placeholder:text-uh-beige/50 focus:outline-none focus:border-uh-beige transition-colors"
         />
-        <button type="button" onClick={() => enter(name)} className="bg-uh-beige text-uh-granate-dark font-display uppercase tracking-widest text-sm px-4 py-2 rounded hover:bg-uh-beige-dark transition-colors">Entrar</button>
+        <button type="button" onClick={() => enter(name)} className="bg-uh-beige text-uh-granate-dark font-display uppercase tracking-widest text-sm px-5 py-3 min-h-14 rounded-xl shadow-md hover:bg-uh-beige-dark hover:shadow-lg active:scale-[0.97] transition-all duration-150">Entrar</button>
       </div>
     </div>
   );

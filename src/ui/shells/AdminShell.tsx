@@ -1,9 +1,11 @@
 import type { ReactNode } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useStore } from '../../store';
 import ResetSeedButton from '../components/ResetSeedButton';
 
 export default function AdminShell({ children }: { children: ReactNode }) {
   const op = useStore(s => s.activeOperatorName);
+  const location = useLocation();
   return (
     <div className="min-h-screen bg-uh-granate-darker text-uh-cream">
       <header className="bg-uh-granate-dark border-b-2 border-uh-beige">
@@ -22,7 +24,9 @@ export default function AdminShell({ children }: { children: ReactNode }) {
         </div>
       </header>
       <main className="p-4 max-w-3xl mx-auto">
-        {children}
+        <div key={location.pathname} className="view-enter">
+          {children}
+        </div>
         <footer className="mt-12 text-center text-xs text-uh-beige/60">
           <a href={import.meta.env.BASE_URL} className="underline hover:text-uh-beige">Abrir cliente PWA →</a>
         </footer>

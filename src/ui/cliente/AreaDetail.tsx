@@ -12,7 +12,7 @@ export default function AreaDetail() {
       <div className="space-y-3">
         <h2 className="font-display text-2xl tracking-wide text-uh-granate">{area.name}</h2>
         <p>Está abierto, ven. Horario: {area.schedule.open}–{area.schedule.close}.</p>
-        <Link to="/qr" className="block bg-uh-granate text-uh-cream text-center py-2 rounded uppercase tracking-widest text-sm font-display hover:bg-uh-granate-dark transition-colors">Abrir mi QR</Link>
+        <Link to="/qr" className="block bg-uh-granate text-uh-cream text-center py-4 min-h-14 rounded-xl uppercase tracking-widest text-base font-display shadow-md hover:bg-uh-granate-dark hover:shadow-lg active:scale-[0.98] transition-all duration-150">Abrir mi QR</Link>
       </div>
     );
   }
@@ -26,7 +26,7 @@ export default function AreaDetail() {
       <button
         type="button"
         onClick={() => navigate(`/reserve/${area.id}`)}
-        className="block w-full bg-uh-granate text-uh-cream text-center py-2 rounded uppercase tracking-widest text-sm font-display hover:bg-uh-granate-dark transition-colors"
+        className="block w-full bg-uh-granate text-uh-cream text-center py-4 min-h-14 rounded-xl uppercase tracking-widest text-base font-display shadow-md hover:bg-uh-granate-dark hover:shadow-lg active:scale-[0.98] transition-all duration-150"
       >
         Reservar un turno
       </button>

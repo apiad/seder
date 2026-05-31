@@ -50,7 +50,7 @@ export default function ReserveSlot() {
                 type="button"
                 disabled={full}
                 onClick={() => onReserve(slot)}
-                className={`w-full py-2 rounded text-sm border transition-colors ${full ? 'bg-slate-100 text-slate-400 border-slate-200' : 'bg-white border-uh-granate text-uh-granate hover:bg-uh-granate hover:text-uh-cream'}`}
+                className={`w-full py-3 min-h-16 rounded-xl text-sm border-2 shadow-sm transition-all duration-150 ${full ? 'bg-slate-100 text-slate-400 border-slate-200' : 'bg-white border-uh-granate text-uh-granate hover:bg-uh-granate hover:text-uh-cream hover:shadow-md active:scale-[0.95]'}`}
               >
                 {slot.slice(11, 16)}<br/>
                 <span className="text-xs">{occ}/{area.capacityPerSlot}</span>

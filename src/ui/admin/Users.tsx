@@ -11,7 +11,7 @@ export default function Users() {
         {users.map(u => {
           const userLogs = logs.filter(l => l.userId === u.id).slice(0, 5);
           return (
-            <li key={u.id} className="bg-uh-granate-dark border border-uh-granate rounded p-3">
+            <li key={u.id} className="bg-uh-granate-dark border border-uh-granate rounded-xl px-4 py-4 shadow-md">
               <div className="flex justify-between items-baseline">
                 <span className="font-display text-lg text-uh-cream">{u.name}</span>
                 <span className="text-xs uppercase tracking-widest text-uh-beige">{u.category}</span>
