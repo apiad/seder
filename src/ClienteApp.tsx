@@ -3,6 +3,7 @@ import ClienteShell from './ui/shells/ClienteShell';
 import SelectUser from './ui/cliente/SelectUser';
 import Home from './ui/cliente/Home';
 import AreaDetail from './ui/cliente/AreaDetail';
+import ReserveSlot from './ui/cliente/ReserveSlot';
 
 export default function ClienteApp() {
   return (
@@ -12,6 +13,7 @@ export default function ClienteApp() {
           <Route path="/" element={<SelectUser />} />
           <Route path="/home" element={<Home />} />
           <Route path="/area/:id" element={<AreaDetail />} />
+          <Route path="/reserve/:areaId" element={<ReserveSlot />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </ClienteShell>
