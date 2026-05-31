@@ -6,7 +6,7 @@ export default function ResetSeedButton() {
     if (confirm('¿Resetear todo el estado del demo?')) resetSeed();
   };
   return (
-    <button type="button" onClick={onClick} className="text-xs text-purple-300 underline">
+    <button type="button" onClick={onClick} className="text-xs text-uh-beige underline hover:text-uh-cream">
       🔄 Resetear seed
     </button>
   );

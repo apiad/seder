@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap");
+
+@theme {
+  --color-uh-granate: #6d222e;
+  --color-uh-granate-dark: #4a1620;
+  --color-uh-granate-darker: #2e0d14;
+  --color-uh-granate-soft: #f5e6e8;
+  --color-uh-beige: #d6c499;
+  --color-uh-beige-dark: #b89a5e;
+  --color-uh-cream: #f7f1e3;
+
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", "Times New Roman", serif;
+}
+
+html, body {
+  font-family: var(--font-sans);
+}

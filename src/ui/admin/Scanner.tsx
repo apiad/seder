@@ -18,24 +18,24 @@ export default function Scanner() {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold">Escáner simulado</h2>
+      <h2 className="font-display text-2xl tracking-widest text-uh-beige uppercase">Escáner simulado</h2>
       <ScanResultBanner result={result} user={user} area={area} />
       <div className="grid gap-3">
         <label className="block">
-          <span className="text-sm text-slate-400">Usuario</span>
+          <span className="text-xs uppercase tracking-widest text-uh-beige">Usuario</span>
           <select value={userId} onChange={e => setUserId(e.target.value)}
-            className="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 mt-1">
+            className="w-full bg-uh-granate-dark border border-uh-granate rounded px-3 py-2 mt-1">
             {users.map(u => <option key={u.id} value={u.id}>{u.name} ({u.category})</option>)}
           </select>
         </label>
         <label className="block">
-          <span className="text-sm text-slate-400">Área</span>
+          <span className="text-xs uppercase tracking-widest text-uh-beige">Área</span>
           <select value={areaId} onChange={e => setAreaId(e.target.value)}
-            className="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 mt-1">
+            className="w-full bg-uh-granate-dark border border-uh-granate rounded px-3 py-2 mt-1">
             {areas.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
           </select>
         </label>
-        <button type="button" onClick={onScan} className="bg-purple-700 py-3 rounded font-bold">
+        <button type="button" onClick={onScan} className="bg-uh-beige text-uh-granate-dark py-3 rounded font-display uppercase tracking-widest hover:bg-uh-beige-dark transition-colors">
           Simular escaneo
         </button>
       </div>

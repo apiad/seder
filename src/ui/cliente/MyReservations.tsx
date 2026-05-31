@@ -13,7 +13,7 @@ export default function MyReservations() {
 
   return (
     <div className="space-y-3">
-      <h2 className="text-xl font-bold">Mis reservas</h2>
+      <h2 className="font-display text-2xl tracking-wide text-uh-granate">Mis reservas</h2>
       {error && <p className="text-sm text-red-600">{error}</p>}
       {sorted.length === 0 && <p className="text-sm text-slate-500">No tienes reservas.</p>}
       <ul className="space-y-2">

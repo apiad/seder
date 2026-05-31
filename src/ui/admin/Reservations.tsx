@@ -14,15 +14,15 @@ export default function Reservations() {
 
   return (
     <div className="space-y-3">
-      <h2 className="text-xl font-bold">Reservas</h2>
+      <h2 className="font-display text-2xl tracking-widest text-uh-beige uppercase">Reservas</h2>
       {err && <p className="text-sm text-red-300">{err}</p>}
       <table className="w-full text-sm">
-        <thead className="text-left text-slate-400 border-b border-slate-700">
-          <tr><th>Cuándo</th><th>Quién</th><th>Dónde</th><th>Estado</th><th></th></tr>
+        <thead className="text-left text-xs uppercase tracking-widest text-uh-beige border-b border-uh-granate">
+          <tr><th className="py-2">Cuándo</th><th>Quién</th><th>Dónde</th><th>Estado</th><th></th></tr>
         </thead>
         <tbody>
           {sorted.map(r => (
-            <tr key={r.id} className="border-b border-slate-800">
+            <tr key={r.id} className="border-b border-uh-granate/40">
               <td className="py-2">{r.slotStart.replace('T', ' ').slice(0, 16)}</td>
               <td>{userName(r.userId)}</td>
               <td>{areaName(r.areaId)}</td>

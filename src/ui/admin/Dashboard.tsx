@@ -16,26 +16,26 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold">Dashboard</h2>
+      <h2 className="font-display text-2xl tracking-widest text-uh-beige uppercase">Dashboard</h2>
       <div className="grid grid-cols-3 gap-3">
         <Stat label="Reservas hoy" value={reservationsToday.length} />
         <Stat label="Entradas hoy" value={admitsToday.length} />
         <Stat label="Logs totales" value={totalLogs} />
       </div>
-      <nav className="flex gap-3 text-sm">
-        <Link to="/scanner" className="bg-purple-700 px-3 py-2 rounded">Escáner</Link>
-        <Link to="/areas" className="bg-slate-800 px-3 py-2 rounded">Áreas</Link>
-        <Link to="/reservations" className="bg-slate-800 px-3 py-2 rounded">Reservas</Link>
-        <Link to="/users" className="bg-slate-800 px-3 py-2 rounded">Usuarios</Link>
+      <nav className="flex gap-3 text-sm font-display uppercase tracking-widest">
+        <Link to="/scanner" className="bg-uh-beige text-uh-granate-dark px-3 py-2 rounded hover:bg-uh-beige-dark transition-colors">Escáner</Link>
+        <Link to="/areas" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Áreas</Link>
+        <Link to="/reservations" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Reservas</Link>
+        <Link to="/users" className="bg-uh-granate px-3 py-2 rounded text-uh-cream hover:bg-uh-granate-dark transition-colors">Usuarios</Link>
       </nav>
       <section>
-        <h3 className="font-semibold mb-2">Stream reciente</h3>
+        <h3 className="font-display uppercase tracking-widest text-xs text-uh-beige mb-2">Stream reciente</h3>
         {recentLogs.length === 0 ? (
-          <p className="text-sm text-slate-500">Sin actividad.</p>
+          <p className="text-sm text-uh-cream/60">Sin actividad.</p>
         ) : (
           <ul className="space-y-1 text-sm">
             {recentLogs.map(l => (
-              <li key={l.id} className={l.result === 'admit' ? 'text-teal-300' : 'text-red-300'}>
+              <li key={l.id} className={l.result === 'admit' ? 'text-uh-beige' : 'text-red-300'}>
                 {l.ts.slice(11, 19)} · {l.userId} → {l.areaId} · {l.result}{l.reason ? ` (${l.reason})` : ''}
               </li>
             ))}
@@ -48,9 +48,9 @@ export default function Dashboard() {
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="bg-slate-800 border border-slate-700 rounded p-3">
-      <div className="text-xs text-slate-400">{label}</div>
-      <div className="text-2xl font-bold">{value}</div>
+    <div className="bg-uh-granate-dark border border-uh-granate rounded p-3">
+      <div className="text-xs uppercase tracking-widest text-uh-beige">{label}</div>
+      <div className="font-display text-3xl text-uh-cream">{value}</div>
     </div>
   );
 }

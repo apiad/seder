@@ -37,7 +37,7 @@ export default function ReserveSlot() {
 
   return (
     <div className="space-y-3">
-      <h2 className="text-xl font-bold">Reservar — {area.name}</h2>
+      <h2 className="font-display text-2xl tracking-wide text-uh-granate">Reservar — {area.name}</h2>
       <p className="text-sm text-slate-500">Hoy, {today}</p>
       {error && <p className="text-sm text-red-600">{error}</p>}
       <ul className="grid grid-cols-3 gap-2">
@@ -50,7 +50,7 @@ export default function ReserveSlot() {
                 type="button"
                 disabled={full}
                 onClick={() => onReserve(slot)}
-                className={`w-full py-2 rounded text-sm ${full ? 'bg-slate-200 text-slate-400' : 'bg-teal-100 hover:bg-teal-200'}`}
+                className={`w-full py-2 rounded text-sm border transition-colors ${full ? 'bg-slate-100 text-slate-400 border-slate-200' : 'bg-white border-uh-granate text-uh-granate hover:bg-uh-granate hover:text-uh-cream'}`}
               >
                 {slot.slice(11, 16)}<br/>
                 <span className="text-xs">{occ}/{area.capacityPerSlot}</span>

@@ -8,13 +8,13 @@ export default function MyQR() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <h2 className="text-xl font-bold">Mi acceso</h2>
-      <div className="bg-white p-4 rounded shadow">
-        <QRCodeSVG value={user.qrToken} size={240} />
+      <h2 className="font-display text-2xl tracking-wide text-uh-granate uppercase">Mi acceso</h2>
+      <div className="bg-white p-4 rounded shadow border-2 border-uh-granate">
+        <QRCodeSVG value={user.qrToken} size={240} fgColor="#6d222e" />
       </div>
       <div className="text-center">
-        <div className="font-medium text-lg">{user.name}</div>
-        <div className="text-xs text-slate-500 capitalize">{user.category}</div>
+        <div className="font-display text-lg tracking-wide text-uh-granate">{user.name}</div>
+        <div className="text-xs uppercase tracking-widest text-slate-500">{user.category}</div>
       </div>
     </div>
   );
