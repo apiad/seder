@@ -5,6 +5,7 @@ import Dashboard from './ui/admin/Dashboard';
 import Scanner from './ui/admin/Scanner';
 import Areas from './ui/admin/Areas';
 import Reservations from './ui/admin/Reservations';
+import Users from './ui/admin/Users';
 
 export default function AdminApp() {
   return (
@@ -16,6 +17,7 @@ export default function AdminApp() {
           <Route path="/scanner" element={<Scanner />} />
           <Route path="/areas" element={<Areas />} />
           <Route path="/reservations" element={<Reservations />} />
+          <Route path="/users" element={<Users />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AdminShell>
