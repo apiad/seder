@@ -23,7 +23,7 @@ export default function ClienteShell({ children }: { children: ReactNode }) {
       <main className="p-4 max-w-md mx-auto">
         {children}
         <footer className="mt-12 text-center text-xs text-slate-500">
-          <a href="/admin.html" className="underline hover:text-uh-granate">Abrir admin PWA →</a>
+          <a href={`${import.meta.env.BASE_URL}admin.html`} className="underline hover:text-uh-granate">Abrir admin PWA →</a>
         </footer>
       </main>
     </div>

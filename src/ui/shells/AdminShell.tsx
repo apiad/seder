@@ -24,7 +24,7 @@ export default function AdminShell({ children }: { children: ReactNode }) {
       <main className="p-4 max-w-3xl mx-auto">
         {children}
         <footer className="mt-12 text-center text-xs text-uh-beige/60">
-          <a href="/index.html" className="underline hover:text-uh-beige">Abrir cliente PWA →</a>
+          <a href={import.meta.env.BASE_URL} className="underline hover:text-uh-beige">Abrir cliente PWA →</a>
         </footer>
       </main>
     </div>
