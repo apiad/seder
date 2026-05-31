@@ -5,3 +5,7 @@ dist/
 *.log
 .env
 .env.local
+.tsbuild/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
