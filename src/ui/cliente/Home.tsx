@@ -5,8 +5,9 @@ export default function Home() {
   const activeUserId = useStore(s => s.activeUserId);
   const user = useStore(s => s.users.find(u => u.id === activeUserId));
   const areas = useStore(s => s.areas);
-  const myReservations = useStore(s =>
-    s.reservations.filter(r => r.userId === activeUserId && r.status === 'active')
+  const reservations = useStore(s => s.reservations);
+  const myReservations = reservations.filter(
+    r => r.userId === activeUserId && r.status === 'active'
   );
 
   if (!user) return <p>Sin sesión.</p>;

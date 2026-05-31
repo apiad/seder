@@ -3,14 +3,16 @@ import { useStore } from '../../store';
 
 export default function Dashboard() {
   const today = new Date().toISOString().slice(0, 10);
-  const reservationsToday = useStore(s =>
-    s.reservations.filter(r => r.slotStart.startsWith(today) && r.status !== 'cancelled')
+  const reservations = useStore(s => s.reservations);
+  const accessLogs = useStore(s => s.accessLogs);
+  const reservationsToday = reservations.filter(
+    r => r.slotStart.startsWith(today) && r.status !== 'cancelled'
   );
-  const admitsToday = useStore(s =>
-    s.accessLogs.filter(l => l.ts.startsWith(today) && l.result === 'admit')
+  const admitsToday = accessLogs.filter(
+    l => l.ts.startsWith(today) && l.result === 'admit'
   );
-  const totalLogs = useStore(s => s.accessLogs.length);
-  const recentLogs = useStore(s => s.accessLogs.slice(0, 10));
+  const totalLogs = accessLogs.length;
+  const recentLogs = accessLogs.slice(0, 10);
 
   return (
     <div className="space-y-6">

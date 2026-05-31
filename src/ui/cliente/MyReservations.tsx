@@ -3,7 +3,8 @@ import { useStore } from '../../store';
 
 export default function MyReservations() {
   const activeUserId = useStore(s => s.activeUserId)!;
-  const reservations = useStore(s => s.reservations.filter(r => r.userId === activeUserId));
+  const allReservations = useStore(s => s.reservations);
+  const reservations = allReservations.filter(r => r.userId === activeUserId);
   const areas = useStore(s => s.areas);
   const cancel = useStore(s => s.cancel);
   const [error, setError] = useState<string | null>(null);
