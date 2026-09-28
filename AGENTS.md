@@ -49,7 +49,6 @@ Live demo: <https://apiad.github.io/seder/> (cliente) ·
 
 ## Conventions
 
-- **Ships to `main` directly** — no PR cycle, no feature branches.
 - **Visual identity is UH** — granate `#6d222e`, beige `#d6c499`,
   Cinzel + Jost. See `know-how/visual-identity-uh.md` before adding any
   surface.
